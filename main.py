@@ -9,7 +9,7 @@ def nmap_scanner(results=None):
     results = nm.scan('45.33.32.158', '22')
     return results
 
-def get_current_ip():
+def creatin_requests():
     session = requests.session()
     data = nmap_scanner()
     # TO Request URL with SOCKS over TOR
