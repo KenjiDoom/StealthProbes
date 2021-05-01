@@ -1,15 +1,17 @@
 import requests
 import time
+import nmap
+import random
 from stem import Signal
 from stem.control import Controller
-import nmap
+from fake_useragent import UserAgent
 
 def nmap_scanner(results=None):
     nm = nmap.PortScanner()
     results = nm.scan('45.33.32.158', '22')
     return results
 
-def create_requests():
+def get_current_ip():
     session = requests.session()
     data = nmap_scanner()
     # TO Request URL with SOCKS over TOR
@@ -17,13 +19,15 @@ def create_requests():
     'http': 'socks5h://localhost:9050',
     'https': 'socks5h://localhost:9050'
     }
+    headers = { 'User-Agent': UserAgent().random }
 
     try:
-        r = session.get(data)
+	    b = session.get("https://ifconfig.me/all.json", headers=headers)
+        #r = session.get(data)
     except Exception as e:
         print (str(e))
     else:
-        return r.text
+        return b.text
 
 
 def renew_tor_ip():
@@ -32,7 +36,7 @@ def renew_tor_ip():
         controller.signal(Signal.NEWNYM)
 
 if __name__ == "__main__":
-    for i in range(1):
-        print (create_requests())
+    for i in range(2):
+        print (get_current_ip())
         renew_tor_ip()
         time.sleep(5)
