@@ -26,8 +26,8 @@ Once you find it enable it by removing the hastag, Also enable HashedControlPass
 Remove the old hash & Input your new one, It should look something like this
 `[
 ControlPort 9051
-## If you enable the controlport, be sure to enable one of these
-## authentication methods, to prevent attackers from accessing it.
+If you enable the controlport, be sure to enable one of these
+authentication methods, to prevent attackers from accessing it.
 HashedControlPassword 16:ECE06C3C0EBEEA816015C9DD04E8607B34C8CF148E357AA19F1B527723
 CookieAuthentication 1
 ]
