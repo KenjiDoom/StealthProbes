@@ -3,20 +3,20 @@ StealthProbe is a tool used for scanning/pinging IOT devices, whilst keeping you
 
 
 # Installation Process 
-#####1st Clone the repo
+##### 1st Clone the repo
 ```
 git clone https://github.com/KenjiDoom/StealthProbes.git
 ```
-#####2nd Install packages (Ubutnu and Arch)
+##### 2nd Install packages (Ubutnu and Arch)
 ```
 pip install -r requirments.txt && sudo apt-get install tor
 pip install -r requirments.txt && sudo pacman -S tor
 ```
-#####3rd Setup tor with password (change password here)
+##### 3rd Setup tor with password (change password here)
 ```
 $ tor --hash-password TEST_PASSWORD 
 ```
-#####4th Step is to copy the hash into the torrc file.
+##### 4th Step is to copy the hash into the torrc file.
 You can use / to quick search a keyword, in this case look for CookieAuthentication 1
 ```
 vim /etc/tor/torrc
