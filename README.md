@@ -24,7 +24,8 @@ vim /etc/tor/torrc
 ```
 Once you find it enable it by removing the hastag, Also enable HashedControlPassword & ControlPort 9051
 Remove the old hash & Input your new one, It should look something like this
-`[
+`
+[
 ControlPort 9051
 If you enable the controlport, be sure to enable one of these
 authentication methods, to prevent attackers from accessing it.
