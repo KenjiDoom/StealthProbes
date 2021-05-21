@@ -20,7 +20,7 @@ $ tor --hash-password TEST_PASSWORD
 You can use / to quick search a keyword, in this case look for CookieAuthentication 1
 ```
 vim /etc/tor/torrc
-/CookieAuthentication 1 1 
+/CookieAuthentication 1
 ```
 Once you find it enable it by removing the hastag, Also enable HashedControlPassword & ControlPort 9051
 Remove the old hash & Input your new one, It should look something like this
