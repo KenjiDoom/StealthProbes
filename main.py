@@ -11,7 +11,7 @@ def nmap_scanner(results=None):
     results = nm.scan('45.33.32.158', '22')
     return results
 
-def get_current_ip():
+def pinger():
     session = requests.session()
     data = nmap_scanner()
     # TO Request URL with SOCKS over TOR
@@ -37,6 +37,6 @@ def renew_tor_ip():
 
 if __name__ == "__main__":
     for i in range(2):
-        print (get_current_ip())
+        print (pinger())
         renew_tor_ip()
         time.sleep(5)
